@@ -112,7 +112,7 @@ typedef struct builtin
 
 
 /* shloop.c */
-int hsh(info_t *, char **);
+int sh_loop(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
@@ -126,10 +126,10 @@ char *find_path(info_t *, char *, char *);
 int loophsh(char **);
 
 /* err.c */
-void _eputs(char *);
-int _eputchar(char);
-int _putfd(char c, int fd);
-int _putsfd(char *str, int fd);
+void _cputs(char *);
+int _cputch(char);
+int _cputfd(char c, int fd);
+int _cputsfd(char *str, int fd);
 
 /* str.c */
 int _strlen(char *);
@@ -149,8 +149,8 @@ char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
 
 /* tkn.c */
-char **strtow(char *, char *);
-char **strtow2(char *, char);
+char **str_w(char *, char *);
+char **str_w2(char *, char);
 
 /* realloc.c */
 char *_memset(char *, char, unsigned int);
@@ -158,29 +158,29 @@ void ffree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 
 /* mem.c */
-int bfree(void **);
+int mfree(void **);
 
 /* Atoi.c */
-int interactive(info_t *);
-int is_delim(char, char *);
-int _isalpha(int);
-int _atoi(char *);
+int interact(info_t *);
+int delim_check(char, char *);
+int alpha_check(int);
+int c_atoi(char *);
 
 /* err1.c */
-int _erratoi(char *);
-void print_error(info_t *, char *);
-int print_d(int, int);
-char *convert_number(long int, int, int);
-void remove_comments(char *);
+int c_erratoi(char *);
+void error_print(info_t *, char *);
+int deci_print(int, int);
+char *num_conv(long int, int, int);
+void r_comm(char *);
 
 /* _bltin.c */
-int _myexit(info_t *);
-int _mycd(info_t *);
-int _myhelp(info_t *);
+int custom_exit(info_t *);
+int custom_cd(info_t *);
+int custom_help(info_t *);
 
 /* bltin1.c */
-int _myhistory(info_t *);
-int _myalias(info_t *);
+int custom_history(info_t *);
+int custom_alias(info_t *);
 
 /* getline.c */
 ssize_t get_input(info_t *);
@@ -194,9 +194,9 @@ void free_info(info_t *, int);
 
 /* environ.c */
 char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
-int _mysetenv(info_t *);
-int _myunsetenv(info_t *);
+int custom_env(info_t *);
+int custom_setenv(info_t *);
+int custom_unsetenv(info_t *);
 int populate_env_list(info_t *);
 
 /* getenv.c */
@@ -206,10 +206,10 @@ int _setenv(info_t *, char *, char *);
 
 /* hist.c */
 char *get_history_file(info_t *info);
-int write_history(info_t *info);
-int read_history(info_t *info);
+int write_hist(info_t *info);
+int read_hist(info_t *info);
 int build_history_list(info_t *info, char *buf, int linecount);
-int renumber_history(info_t *info);
+int renumber_hist(info_t *info);
 
 /* lst.c */
 list_t *add_node(list_t **, const char *, int);
@@ -226,11 +226,11 @@ list_t *node_starts_with(list_t *, char *, char);
 ssize_t get_node_index(list_t *, list_t *);
 
 /* var.c */
-int is_chain(info_t *, char *, size_t *);
-void check_chain(info_t *, char *, size_t *, size_t, size_t);
-int replace_alias(info_t *);
-int replace_vars(info_t *);
-int replace_string(char **, char *);
+int chain_test(info_t *, char *, size_t *);
+void chain_check(info_t *, char *, size_t *, size_t, size_t);
+int rep_alias(info_t *);
+int rep_vars(info_t *);
+int rep_string(char **, char *);
 
 #endif
 
