@@ -18,8 +18,8 @@ int custom_exit(info_t *info)
 		{
 			info->status = 2;
 			error_print(info, "Illegal number: ");
-			_eputs(info->argv[1]);
-			_eputchar('\n');
+			_cputs(info->argv[1]);
+			_cputch('\n');
 			return (1);
 		}
 		info->err_num = c_erratoi(info->argv[1]);
