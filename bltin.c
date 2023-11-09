@@ -1,17 +1,16 @@
 #include "shell.h"
 
 /**
- * custom_exit - exits the shell
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- *  Return: exits with a given exit status
- *         (0) if info.argv[0] != "exit"
+ * custom_exit - exit shell
+ * @info: The structure that holds arguments.
+ *
+ * Return: exits if info.argv[0] != "exit"
  */
 int custom_exit(info_t *info)
 {
 	int exitcheck;
 
-	if (info->argv[1])  /* If there is an exit arguement */
+	if (info->argv[1])
 	{
 		exitcheck = c_erratoi(info->argv[1]);
 		if (exitcheck == -1)
@@ -31,9 +30,9 @@ int custom_exit(info_t *info)
 
 /**
  * custom_cd - changes the current directory of the process
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- *  Return: Always 0
+ * @info: the structure that holds arguments.
+ *
+ * Return: Always 0
  */
 int custom_cd(info_t *info)
 {
@@ -80,10 +79,10 @@ int custom_cd(info_t *info)
 }
 
 /**
- * custom_help - changes the current directory of the process
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- *  Return: Always 0
+ * custom_help - help to change the current directory of the process
+ * @info: The structure that holds arguments.
+ *
+ * Return: Always 0
  */
 int custom_help(info_t *info)
 {
