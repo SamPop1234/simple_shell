@@ -3,7 +3,7 @@
 /**
  * interact - returns true if shell is interactive mode
  * @info: struct address
- * Return: 1 if interactive mode, 0 otherwise
+ * Return: 1 if interactive mode, 0 if None
  */
 int interact(info_t *info)
 {
@@ -25,9 +25,9 @@ int delim_check(char c, char *delim)
 }
 
 /**
- *alpha_check - checks for alphabetic character
- *@c: The character to input
- *Return: 1 if c is alphabetic, 0 otherwise
+ *alpha_check - alphabetic character check
+ *@i: character inputs
+ *Return: 1 if c is alphabetic, 0 if None
  */
 
 int alpha_check(int i)
@@ -39,9 +39,9 @@ int alpha_check(int i)
 }
 
 /**
- *c_atoi - converts a string to an integer
+ *c_atoi - function that converts a string to an integer
  *@s: the string to be converted
- *Return: 0 if no numbers in string, converted number otherwise
+ *Return: 0 if no numbers in string, convert number
  */
 
 int c_atoi(char *s)
