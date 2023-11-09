@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * c_erratoi - converts a string to an integer
+ * c_erratoi - function which converts a string to an integer
  * @s: the string to be converted
- * Return: 0 if no numbers in string, converted number otherwise
- *       -1 on error
+ *
+ * Return: 0 if no numbers in string, converted number otherwise -1 on error
  */
 int c_erratoi(char *s)
 {
@@ -29,11 +29,11 @@ int c_erratoi(char *s)
 }
 
 /**
- * error_print - prints an error message
- * @info: the parameter & return info struct
- * @estr: string containing specified error type
- * Return: 0 if no numbers in string, converted number otherwise
- *        -1 on error
+ * error_print - error message to be printed
+ * @info: the function and return info struct
+ * @estr: string that hold specified error type
+ *
+ * Return: 0 if no numbers in string, converted number otherwise -1 on error
  */
 void error_print(info_t *info, char *estr)
 {
@@ -47,11 +47,11 @@ void error_print(info_t *info, char *estr)
 }
 
 /**
- * deci_print - function prints a decimal (integer) number (base 10)
+ * deci_print - function that prints a decimal number (base 10)
  * @input: the input
- * @fd: the filedescriptor to write to
+ * @fd: the filedescriptor
  *
- * Return: number of characters printed
+ * Return: number of characters to be printed
  */
 int deci_print(int input, int fd)
 {
@@ -121,8 +121,8 @@ char *num_conv(long int num, int base, int flags)
 }
 
 /**
- * r_comm - function replaces first instance of '#' with '\0'
- * @buf: address of the string to modify
+ * r_comm - function that replaces '#' with '\0'
+ * @buf: address of the string to be modified
  * Return: Always 0;
  */
 void r_comm(char *buf)
