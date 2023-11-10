@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * chain_test - test if current char in buffer is a chain delimeter
- * @info: the parameter struct
+ * chain_test - test if current character in buffer is a chain delimeter
+ * @info: struct parameter
  * @buf: the char buffer
- * @p: address of current position in buf
+ * @p: pointer to the current position in buf
  *
- * Return: 1 if chain delimeter, 0 otherwise
+ * Return: 1 if chain delimeter, else 0
  */
 int chain_test(info_t *info, char *buf, size_t *p)
 {
@@ -36,12 +36,12 @@ int chain_test(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * chain_check - checks we should continue chaining based on last status
- * @info: the parameter struct
+ * chain_check - checks chain based on last status
+ * @info: the struct parameter
  * @buf: the char buffer
- * @p: address of current position in buf
+ * @p: pointer to the current position in buf
  * @i: starting position in buf
- * @len: length of buf
+ * @len: length of buffer
  *
  * Return: Void
  */
@@ -70,10 +70,10 @@ void chain_check(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 }
 
 /**
- * rep_alias - replaces an aliases in the tokenized string
- * @info: the parameter struct
+ * rep_alias - replaces an aliase in the tokenized string
+ * @info: the parameter structure
  *
- * Return: 1 if replaced, 0 otherwise
+ * Return: 1 if successfully replaced, else 0
  */
 int rep_alias(info_t *info)
 {
@@ -99,10 +99,10 @@ int rep_alias(info_t *info)
 }
 
 /**
- * rep_vars - replaces vars in the tokenized string
- * @info: the parameter struct
+ * rep_vars - replaces variables in the tokenized string
+ * @info: the parameter structure
  *
- * Return: 1 if replaced, 0 otherwise
+ * Return: 1 if successfully replaced, else 0
  */
 int rep_vars(info_t *info)
 {
