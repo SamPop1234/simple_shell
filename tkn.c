@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * **str_w - splits a string into words. Repeat delimiters are ignored
+ * **str_w - divide a string into words
  * @str: the input string
  * @d: the delimeter string
- * Return: a pointer to an array of strings, or NULL on failure
+ * Return: a pointer to an array of strings or NULL if unsuccessful
  */
 
 char **str_w(char *str, char *d)
@@ -49,10 +49,10 @@ char **str_w(char *str, char *d)
 }
 
 /**
- * **str_w2 - splits a string into words
+ * **str_w2 - split a string into individual words
  * @str: the input string
  * @d: the delimeter
- * Return: a pointer to an array of strings, or NULL on failure
+ * Return: a pointer to an array of strings, or NULL if unsuccessful
  */
 char **str_w2(char *str, char d)
 {
