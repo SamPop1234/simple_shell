@@ -183,14 +183,14 @@ int custom_history(info_t *);
 int custom_alias(info_t *);
 
 /* getline.c */
-ssize_t get_input(info_t *);
-int _getline(info_t *, char **, size_t *);
-void sigintHandler(int);
+ssize_t input_get(info_t *);
+int custom_getline(info_t *, char **, size_t *);
+void handle_sig(int);
 
 /* getinfo.c */
-void clear_info(info_t *);
-void set_info(info_t *, char **);
-void free_info(info_t *, int);
+void info_clr(info_t *);
+void info_st(info_t *, char **);
+void info_fr(info_t *, int);
 
 /* environ.c */
 char *_getenv(info_t *, const char *);

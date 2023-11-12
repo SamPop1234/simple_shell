@@ -31,7 +31,6 @@ int custom_exit(info_t *info)
 /**
  * custom_cd - changes the current directory of the process
  * @info: the structure that holds arguments.
- *
  * Return: Always 0
  */
 int custom_cd(info_t *info)
@@ -89,7 +88,7 @@ int custom_help(info_t *info)
 	char **arg_array;
 
 	arg_array = info->argv;
-	_puts("help call works. Function not yet implemented \n");
+	_puts("Function not yet implemented \n");
 	if (0)
 		_puts(*arg_array);
 	return (0);
