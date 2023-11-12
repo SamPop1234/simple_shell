@@ -17,7 +17,7 @@ list_t *add_node(list_t **head, const char *str, int num)
 	new_head = malloc(sizeof(list_t));
 	if (!new_head)
 		return (NULL);
-	_memset((void *)new_head, 0, sizeof(list_t));
+	custom_memset((void *)new_head, 0, sizeof(list_t));
 	new_head->num = num;
 	if (str)
 	{
@@ -52,7 +52,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 	new_node = malloc(sizeof(list_t));
 	if (!new_node)
 		return (NULL);
-	_memset((void *)new_node, 0, sizeof(list_t));
+	custom_memset((void *)new_node, 0, sizeof(list_t));
 	new_node->num = num;
 	if (str)
 	{
@@ -77,7 +77,6 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 /**
  * print_list_str - prints only the str element of a list_t linked list
  * @h: pointer to first node
- *
  * Return: size of list
  */
 size_t print_list_str(const list_t *h)
@@ -137,7 +136,6 @@ int delete_node_at_index(list_t **head, unsigned int index)
 /**
  * free_list - frees every node of a list
  * @head_ptr:  pointer head node address
- *
  * Return: void
  */
 void free_list(list_t **head_ptr)

@@ -135,8 +135,8 @@ int _getline(info_t *info, char **ptr, size_t *length)
 
 	c = _strchr(buf + i, '\n');
 	k = c ? 1 + (unsigned int)(c - buf) : len;
-	new_p = _realloc(p, s, s ? s + k : k + 1);
-	if (!new_p) /* MALLOC FAILURE! */
+	new_p = custom_realloc(p, s, s ? s + k : k + 1);
+	if (!new_p)
 		return (p ? free(p), -1 : -1);
 
 	if (s)
@@ -157,7 +157,6 @@ int _getline(info_t *info, char **ptr, size_t *length)
 /**
  * sigintHandler - blocks ctrl-C
  * @sig_num: the signal number
- *
  * Return: void
  */
 void sigintHandler(__attribute__((unused))int sig_num)

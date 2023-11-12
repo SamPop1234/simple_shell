@@ -153,9 +153,9 @@ char **str_w(char *, char *);
 char **str_w2(char *, char);
 
 /* realloc.c */
-char *_memset(char *, char, unsigned int);
-void ffree(char **);
-void *_realloc(void *, unsigned int, unsigned int);
+char *custom_memset(char *, char, unsigned int);
+void strfree(char **);
+void *custom_realloc(void *, unsigned int, unsigned int);
 
 /* mem.c */
 int mfree(void **);

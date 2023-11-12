@@ -1,8 +1,8 @@
 #include "shell.h"
-i
+
 /**
  * custom_history - history list presenting each command on a seperate line
- * @info: Structure holding possible arguments.
+ * @info: Structure holding arguments.
  *
  *  Return: Always 0
  */
