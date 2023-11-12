@@ -3,8 +3,7 @@
 /**
  *_cputs - prints an input string
  * @str: the string to be printed
- *
- * Return: Nothing
+ * Return: None
  */
 void _cputs(char *str)
 {
@@ -20,11 +19,11 @@ void _cputs(char *str)
 }
 
 /**
- * _cputch - writes the character c to stderr
- * @c: The character to print
+ * _cputch - writes the char c to stderr
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * @c: The char to print
+ *
+ * Return: success 1 error -1 is returned
  */
 int _cputch(char c)
 {
@@ -42,11 +41,13 @@ int _cputch(char c)
 }
 
 /**
- * _cputfd - writes the character c to given fd
- * @c: The character to print
- * @fd: The filedescriptor to write to
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _cputfd - writes the char c to given fd
+ *
+ * @c: The char to print
+ *
+ * @fd: The filedescriptor written into
+ *
+ * Return: success 1 error -1 is returned.
  */
 int _cputfd(char c, int fd)
 {
@@ -66,7 +67,7 @@ int _cputfd(char c, int fd)
 /**
  *_cputsfd - prints an input string
  * @str: the string to be printed
- * @i: the filedescriptor to write to
+ * @i: the filedescriptor written into
  *
  * Return: the number of chars put
  */
