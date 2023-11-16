@@ -1,66 +1,66 @@
 #include "shell.h"
 
 /**
- * c_erratoi - function which converts a string to an integer
+ * _erratoi - converts a string to an integer
  * @s: the string to be converted
- *
- * Return: 0 if no numbers in string, converted number otherwise -1 on error
+ * Return: 0 if no numbers in string, converted number otherwise
+ *       -1 on error
  */
-int c_erratoi(char *s)
+int _erratoi(char *s)
 {
 	int i = 0;
-	unsigned long int r = 0;
+	unsigned long int result = 0;
 
 	if (*s == '+')
-		s++;
+		s++;  /* TODO: why does this make main return 255? */
 	for (i = 0;  s[i] != '\0'; i++)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			r *= 10;
-			r += (s[i] - '0');
-			if (r > INT_MAX)
+			result *= 10;
+			result += (s[i] - '0');
+			if (result > INT_MAX)
 				return (-1);
 		}
 		else
 			return (-1);
 	}
-	return (r);
+	return (result);
 }
 
 /**
- * error_print - error message to be printed
- * @info: the function and return info struct
- * @estr: string that hold specified error type
- *
- * Return: 0 if no numbers in string, converted number otherwise -1 on error
+ * print_error - prints an error message
+ * @info: the parameter & return info struct
+ * @estr: string containing specified error type
+ * Return: 0 if no numbers in string, converted number otherwise
+ *        -1 on error
  */
-void error_print(info_t *info, char *estr)
+void print_error(info_t *info, char *estr)
 {
-	_cputs(info->fname);
-	_cputs(": ");
-	deci_print(info->line_count, STDERR_FILENO);
-	_cputs(": ");
-	_cputs(info->argv[0]);
-	_cputs(": ");
-	_cputs(estr);
+	_eputs(info->fname);
+	_eputs(": ");
+	print_d(info->line_count, STDERR_FILENO);
+	_eputs(": ");
+	_eputs(info->argv[0]);
+	_eputs(": ");
+	_eputs(estr);
 }
 
 /**
- * deci_print - function that prints a decimal number (base 10)
+ * print_d - function prints a decimal (integer) number (base 10)
  * @input: the input
- * @fd: the filedescriptor
+ * @fd: the filedescriptor to write to
  *
- * Return: number of characters to be printed
+ * Return: number of characters printed
  */
-int deci_print(int input, int fd)
+int print_d(int input, int fd)
 {
 	int (*__putchar)(char) = _putchar;
 	int i, count = 0;
 	unsigned int _abs_, current;
 
 	if (fd == STDERR_FILENO)
-		__putchar = _cputch;
+		__putchar = _eputchar;
 	if (input < 0)
 	{
 		_abs_ = -input;
@@ -86,13 +86,14 @@ int deci_print(int input, int fd)
 }
 
 /**
- * num_conv - converter function
+ * convert_number - converter function, a clone of itoa
  * @num: number
  * @base: base
  * @flags: argument flags
+ *
  * Return: string
  */
-char *num_conv(long int num, int base, int flags)
+char *convert_number(long int num, int base, int flags)
 {
 	static char *array;
 	static char buffer[50];
@@ -121,11 +122,12 @@ char *num_conv(long int num, int base, int flags)
 }
 
 /**
- * r_comm - function that replaces '#' with '\0'
- * @buf: address of the string to be modified
+ * remove_comments - function replaces first instance of '#' with '\0'
+ * @buf: address of the string to modify
+ *
  * Return: Always 0;
  */
-void r_comm(char *buf)
+void remove_comments(char *buf)
 {
 	int i;
 
