@@ -2,31 +2,31 @@
 
 /**
  * _strcpy - copies a string
- * @dest: the destination
- * @src: the source
+ * @dest: the destination of copied string
+ * @src: the source of a copied string
  *
  * Return: pointer to destination
  */
 char *_strcpy(char *dest, char *src)
 {
-	int i = 0;
+	int z = 0;
 
 	if (dest == src || src == 0)
 		return (dest);
-	while (src[i])
+	while (src[z])
 	{
-		dest[i] = src[i];
-		i++;
+		dest[z] = src[z];
+		z++;
 	}
-	dest[i] = 0;
+	dest[z] = 0;
 	return (dest);
 }
 
 /**
- * _strdup - duplicates a string
- * @str: the string to duplicate
+ * _strdup - make an exact copy of a string
+ * @str: the string to be changed
  *
- * Return: pointer to the duplicated string
+ * Return: pointer to the changed string
  */
 char *_strdup(const char *str)
 {
@@ -46,27 +46,27 @@ char *_strdup(const char *str)
 }
 
 /**
- *_puts - prints an input string
- *@str: the string to be printed
+ *_puts - print a string input
+ *@str: the string to print
  *
- * Return: Nothing
+ * Return: Null
  */
 void _puts(char *str)
 {
-	int i = 0;
+	int j = 0;
 
 	if (!str)
 		return;
-	while (str[i] != '\0')
+	while (str[j] != '\0')
 	{
-		_putchar(str[i]);
-		i++;
+		_putchar(str[j]);
+		j++;
 	}
 }
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * _putchar - write char c to stdout
+ * @c: char to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
