@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * _erratoi - converts a string to an integer
- * @s: the string to be converted
+ * _erratoi - convert string to integer
+ * @s: the converted string
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
  */
@@ -30,8 +30,8 @@ int _erratoi(char *s)
 
 /**
  * print_error - prints an error message
- * @info: the parameter & return info struct
- * @estr: string containing specified error type
+ * @info: the struct parameter & info returned
+ * @estr: string holding a specific error type
  * Return: 0 if no numbers in string, converted number otherwise
  *        -1 on error
  */
@@ -47,11 +47,11 @@ void print_error(info_t *info, char *estr)
 }
 
 /**
- * print_d - function prints a decimal (integer) number (base 10)
+ * print_d - function that prints a float, integer number
  * @input: the input
- * @fd: the filedescriptor to write to
+ * @fd: the filedescriptor
  *
- * Return: number of characters printed
+ * Return: num of char to print
  */
 int print_d(int input, int fd)
 {
@@ -86,10 +86,10 @@ int print_d(int input, int fd)
 }
 
 /**
- * convert_number - converter function, a clone of itoa
+ * convert_number - function to convert number
  * @num: number
  * @base: base
- * @flags: argument flags
+ * @flags: flags
  *
  * Return: string
  */
@@ -123,9 +123,9 @@ char *convert_number(long int num, int base, int flags)
 
 /**
  * remove_comments - function replaces first instance of '#' with '\0'
- * @buf: address of the string to modify
+ * @buf: modified string address
  *
- * Return: Always 0;
+ * Return: 0
  */
 void remove_comments(char *buf)
 {
