@@ -39,8 +39,8 @@ extern char **environ;
 
 /**
  * struct liststr - singly linked list
- * @num: the number field
- * @str: a string
+ * @num: the list number field
+ * @str: the string
  * @next: points to the next node
  */
 typedef struct liststr
@@ -51,26 +51,25 @@ typedef struct liststr
 } list_t;
 
 /**
- *struct passinfo - contains pseudo-arguements to pass into a function,
- *		allowing uniform prototype for function pointer struct
+ *struct passinfo - hold arguements to pass into a function
  *@arg: a string generated from getline containing arguements
- *@argv: an array of strings generated from arg
- *@path: a string path for the current command
- *@argc: the argument count
+ *@argv: an array of str generated from argument
+ *@path: a str path for the present command
+ *@argc: argument count
  *@line_count: the error count
- *@err_num: the error code for exit()s
+ *@err_num: the error code for exit
  *@linecount_flag: if on count this line of input
- *@fname: the program filename
+ *@fname: the filename
  *@env: linked list local copy of environ
- *@environ: custom modified copy of environ from LL env
- *@history: the history node
+ *@environ: modify copy of environ from LinkedList env
+ *@history: the hist node
  *@alias: the alias node
  *@env_changed: on if environ was changed
- *@status: the return status of the last exec'd command
- *@cmd_buf: address of pointer to cmd_buf, on if chaining
+ *@status: the status of the last executed cmd
+ *@cmd_buf: pointer address to cmd_buf
  *@cmd_buf_type: CMD_type ||, &&, ;
- *@readfd: the fd from which to read line input
- *@histcount: the history line number count
+ *@readfd: the fd that read line input
+ *@histcount: the hist line num count
  */
 typedef struct passinfo
 {
@@ -100,9 +99,9 @@ typedef struct passinfo
 	0, 0, 0}
 
 /**
- *struct builtin - contains a builtin string and related function
- *@type: the builtin command flag
- *@func: the function
+ *struct builtin - a builtin string and function alike.
+ *@type: the builtin cmd flag
+ *@func: function
  */
 typedef struct builtin
 {
